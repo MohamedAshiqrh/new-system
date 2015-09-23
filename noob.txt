@@ -1,0 +1,11 @@
+yum -y update && yum install -y vim zsh the_silver_searcher 
+
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+ssh-keygen -t rsa -b 4096 -C "mliyazud@redhat.com"
+
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_rsa
+
+yum -y vnc-viewer virt-manager
