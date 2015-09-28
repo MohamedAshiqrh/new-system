@@ -1,6 +1,11 @@
-yum -y update && yum install -y vim zsh the_silver_searcher 
 
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+yum -y update && yum install -y vim zsh the_silver_searcher python gcc python-devel docker
+
+rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
+
+yum install -y vlc
 
 ssh-keygen -t rsa -b 4096 -C "mliyazud@redhat.com"
 
