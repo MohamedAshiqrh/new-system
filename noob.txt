@@ -13,4 +13,4 @@ eval "$(ssh-agent -s)"
 
 ssh-add ~/.ssh/id_rsa
 
-yum -y vnc-viewer virt-manager
+yum -y insert vnc-viewer virt-manager
