@@ -1,16 +1,22 @@
+yum -y update && yum install -y vim zsh
 
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
-yum -y update && yum install -y vim zsh the_silver_searcher python gcc python-devel docker
+cat << EOF > /etc/yum.repos.d/google-chrome.repo
+[google-chrome]
+name=google-chrome - \$basearch
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/\$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+EOF
 
 rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
 
-yum install -y vlc
+yum install -y vlc the_silver_searcher gcc python-devel docker vnc virt-manager google-chrome-stable
 
 ssh-keygen -t rsa -b 4096 -C "mliyazud@redhat.com"
 
 eval "$(ssh-agent -s)"
 
 ssh-add ~/.ssh/id_rsa
-
-yum -y insert vnc-viewer virt-manager
